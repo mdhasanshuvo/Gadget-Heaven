@@ -1,6 +1,23 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import {
+    ComposedChart,
+    Line,
+    Area,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    Scatter,
+    ResponsiveContainer,
+} from 'recharts';
+import Chart from '../Chart/Chart';
+
 
 const Statistics = () => {
+    const data = useLoaderData();
     return (
         <div>
             <div className='bg-[#9538E2] py-20 text-white text-center space-y-4'>
@@ -10,7 +27,8 @@ const Statistics = () => {
             <div className='container mx-auto'>
                 <h2 className='text-2xl font-bold my-8'>Statistics</h2>
             </div>
-            
+
+            <Chart data={data}></Chart>
         </div>
     );
 };

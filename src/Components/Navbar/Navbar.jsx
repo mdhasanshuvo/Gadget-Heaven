@@ -10,6 +10,7 @@ const Navbar = () => {
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/stat'>Statistics</NavLink>
         <NavLink to='/dashboard'>Dashboard</NavLink>
+        <NavLink to='/qa'>Q&A</NavLink>
     </>
 
     const location = useLocation();
@@ -42,19 +43,19 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Gadget Heaven</a>
+                    <a className="btn btn-ghost text-2xl font-semibold text-black">Gadget Heaven</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 space-x-6">
+                    <ul className="menu menu-horizontal px-1 space-x-6 text-lg font-semibold">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle text-2xl relative">
+                <div className="navbar-end ">
+                    <button className="btn btn-ghost btn-circle text-2xl relative border rounded-full border-white bg-white">
                     <IoCartOutline />
                     <h2 className='absolute bottom-7 left-6 text-sm'>{card.length}</h2>
                     </button>
-                    <button className="btn btn-ghost btn-circle relative">
+                    <button className="btn btn-ghost btn-circle relative border rounded-full border-white bg-white">
                         <img src={love} alt="" />
                         <h2 className='absolute bottom-8 left-6'>{wish.length}</h2>
                     </button>

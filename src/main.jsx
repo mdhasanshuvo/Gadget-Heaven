@@ -13,6 +13,7 @@ import Gadgets from './Components/Gadgets/Gadgets';
 import CategoryData from './Components/CategoryData/CategoryData';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Statistics from './Components/Statistics/Statistics';
+import QA from './Components/QA/QA';
 
 const router = createBrowserRouter([
   {
@@ -52,15 +53,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/stat',
+        loader: () => fetch('/gadget.json'),
         element: <Statistics></Statistics>,
+      },
+      {
+        path: '/qa',
+        element: <QA></QA>
       },
     ]
   },
 ]);
-
-// export const MoneyContext = createContext(1000);
-// <MoneyContext.Provider value={[money,setMoney]}></MoneyContext.Provider>
-// const gift = useContext(AssetContext);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
