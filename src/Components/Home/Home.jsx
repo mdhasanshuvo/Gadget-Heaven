@@ -1,12 +1,17 @@
 import { Link, Outlet } from 'react-router-dom';
 import banner from '../../assets/banner.jpg';
 import CategoriesSidebar from '../CategoriesSidebar/CategoriesSidebar';
-import Gadgets from '../Gadgets/Gadgets';
+import {Helmet} from "react-helmet";
 
-const Home = () => {
+const Home = (
+
+) => {
     return (
         <div className='bg-[#F6F6F6]'>
             {/* banner section  */}
+            <Helmet>
+                <title>Gadget | Gadget Heaven</title>
+            </Helmet>
             <div className='container mx-auto'>
                 <div className="hero rounded-2xl bg-[#9538E2] text-white pt-20 pb-44">
                     <div className="hero-content text-center">
@@ -28,7 +33,6 @@ const Home = () => {
             <h2 className='container mx-auto text-center font-bold text-4xl pb-16 '>Explore Cutting-Edge Gadgets</h2>
             <div className='flex gap-6 container mx-auto '>
                 <CategoriesSidebar></CategoriesSidebar>
-                {/* <Gadgets></Gadgets> */}
                 <Outlet></Outlet>
             </div>
 

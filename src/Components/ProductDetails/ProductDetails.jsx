@@ -56,7 +56,9 @@ const ProductDetails = () => {
                         <button className="btn btn-sm ml-2">{rating}</button>
                     </div>
                     <div className="card-actions text-white items-center">
+                        {/* -------------------------------------------- */}
                         <button onClick={() => {
+                            toast.success('Added to the card');
                             setCard([...card, gadget])
                         }} className="btn bg-[#9538E2] rounded-3xl text-white">Add To Card
                             <img src={cart} alt="" />

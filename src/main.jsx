@@ -14,6 +14,9 @@ import CategoryData from './Components/CategoryData/CategoryData';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Statistics from './Components/Statistics/Statistics';
 import QA from './Components/QA/QA';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const router = createBrowserRouter([
   {
@@ -32,12 +35,12 @@ const router = createBrowserRouter([
           {
             path: '/home/:category',
             element: <CategoryData></CategoryData>,
-            loader: async ({params}) => {
-              const rest= await fetch('/gadget.json')
+            loader: async ({ params }) => {
+              const rest = await fetch('/gadget.json')
               const data = await rest.json()
               const items = data.filter(item => item.category === params.category);
-               console.log(items);
-               return items;
+              console.log(items);
+              return items;
             }
           }
         ]
@@ -66,6 +69,19 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition:Bounce
+    />
     <RouterProvider router={router} />
   </StrictMode>,
 )

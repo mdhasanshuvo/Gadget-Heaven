@@ -1,8 +1,12 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 
 const QA = () => {
     return (
         <div>
+            <Helmet>
+                <title>Q&A | Gadget Heaven</title>
+            </Helmet>
             <div className='bg-[#9538E2] py-20 text-white text-center space-y-4'>
                 <h2 className='text-3xl font-bold'>Q&A</h2>
                 <p className='w-3/6 mx-auto'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
