@@ -12,19 +12,14 @@ const Dashboard = () => {
     const handleCart = () => {
         setShowCart(true);
         setShowWishList(false);
-        // -----------------------------------------------------------
-        document.getElementById('cart').classList.add('bg-black');
-        document.getElementById('wish').classList.remove('bg-black');
-        // ------------------------------------------------------
     };
 
     const handleWish = () => {
         setShowWishList(true);
         setShowCart(false);
-        document.getElementById('wish').classList.add('bg-black');
-        document.getElementById('cart').classList.remove('bg-black');
     };
 
+    console.log(showCart,showWishList)
     return (
         <div>
             <Helmet>
@@ -34,8 +29,8 @@ const Dashboard = () => {
                 <h2 className='text-3xl font-bold
             '>Dashboard</h2>
                 <p className='w-3/6 mx-auto'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-                <NavLink id='cart' onClick={handleCart} className="btn btn-outline rounded-xl m-3 text-white">Cart</NavLink>
-                <NavLink id='wish' onClick={handleWish} className="btn btn-outline rounded-xl m-3 text-white">Wishlist</NavLink>
+                <button id='cart' onClick={handleCart} className={`btn btn-outline rounded-xl m-3 text-white ${showCart && 'bg-black'}`}>Cart</button>
+                <button id='wish' onClick={handleWish} className={`btn btn-outline rounded-xl m-3 text-white ${showWishList && 'bg-black'}`}>Wishlist</button>
             </div>
             {showCart && <Cart></Cart>}
             {showWishList && <WishList></WishList>}

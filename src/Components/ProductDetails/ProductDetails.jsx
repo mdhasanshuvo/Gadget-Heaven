@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import cart from '../../assets/Frame.svg'
 import love from '../../assets/Love.svg'
@@ -16,6 +16,8 @@ const ProductDetails = () => {
     const [wish, setWish] = useContext(WishContext);
 
     const [card, setCard] = useContext(CardContext);
+
+    const [isDisabled, setIsDisabled] = useState(false);
 
     return (
         <div className=''>
@@ -67,8 +69,9 @@ const ProductDetails = () => {
                         </button>
                         <button onClick={() => {
                             toast('Added to the Wish List');
-                            setWish([...wish, gadget])
-                        }} className='border rounded-full p-2'><img src={love} alt="" /></button>
+                            setWish([...wish, gadget]);
+                            setIsDisabled(true);
+                        }} className='border rounded-full p-2' disabled={isDisabled} ><img src={love} alt="" /></button>
                     </div>
                 </div>
             </div>
