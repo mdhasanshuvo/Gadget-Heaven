@@ -8,7 +8,7 @@ const Home = () => {
         <div className='bg-[#F6F6F6]'>
             {/* banner section  */}
             <div className='container mx-auto'>
-                <div className="hero rounded-2xl bg-[#9538E2] text-white pt-12 pb-44">
+                <div className="hero rounded-2xl bg-[#9538E2] text-white pt-20 pb-44">
                     <div className="hero-content text-center">
                         <div className="">
                             <h1 className="text-5xl font-bold max-w-4xl">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
@@ -19,7 +19,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-1/2 border rounded-2xl p-5 pb-0 mx-auto relative bottom-40'>
+                <div className='w-2/3 border rounded-2xl p-5 pb-0 mx-auto relative bottom-40'>
                     <img className="rounded-2xl object-cover" src={banner} alt="there is an image" />
                 </div>
             </div>
