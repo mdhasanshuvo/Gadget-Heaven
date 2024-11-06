@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CardContext } from '../Root/Root';
 import { VscError } from "react-icons/vsc";
 import { CiFilter } from "react-icons/ci";
+import right from '../../assets/Group.png'
+import { NavLink } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -30,24 +32,11 @@ const Cart = () => {
 
     // ---------------------------------------------------------
     const handlePurchase = (amount) => {
-        return (
-            <div>
-                {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn" onClick={() => document.getElementById('my_modal_5').showModal()}>open modal</button>
-                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                    <div className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Press ESC key or click the button below to close</p>
-                        <div className="modal-action">
-                            <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn">Close</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
-            </div>
-        )
+        document.getElementById('my_modal_5').showModal();
+    }
+    const handleChange = () => {
+        setCard([]);
+        setTotal(0);
     }
 
     return (
@@ -94,6 +83,26 @@ const Cart = () => {
                     </div>
                 ))
             )}
+            <div>
+                {/* Open the modal using document.getElementById('ID').showModal() method */}
+                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                    <div className="modal-box text-center mx-6 space-y-3">
+                        <img className='mx-auto' src={right} alt="" />
+                        <h3 className="font-bold text-2xl">Payment Successfully</h3>
+                        <hr />
+                        <p className="py-4 opacity-50 font-medium">Thanks for purchasing. <br />
+                            Total: $ {total}</p>
+                        {/* <div className="modal-action">
+                            <form method="w-full">
+                                <button className="btn">Close</button>
+                            </form>
+                        </div> */}
+                        <div className='bg-[#11000008] border rounded-3xl py-2'>
+                            <NavLink onClick={handleChange} to='/' className=''>Close</NavLink>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
         </div>
     );
 };

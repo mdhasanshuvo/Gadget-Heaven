@@ -3,6 +3,8 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import cart from '../../assets/Frame.svg'
 import love from '../../assets/Love.svg'
 import { CardContext, WishContext } from '../Root/Root';
+import { toast } from 'react-toastify';
+
 
 const ProductDetails = () => {
     const { gadget_id } = useParams();
@@ -64,6 +66,7 @@ const ProductDetails = () => {
                             <img src={cart} alt="" />
                         </button>
                         <button onClick={() => {
+                            toast('Added to the Wish List');
                             setWish([...wish, gadget])
                         }} className='border rounded-full p-2'><img src={love} alt="" /></button>
                     </div>

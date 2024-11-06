@@ -3,6 +3,7 @@ import WishList from '../WishList/WishList';
 import Cart from '../Cart/Cart';
 import { NavLink } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import './dashboard.css'
 
 const Dashboard = () => {
     const [showCart, setShowCart] = useState(true);

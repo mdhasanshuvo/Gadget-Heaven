@@ -1,10 +1,10 @@
 # Gadget Heaven E-commerce Platform
 
 ## Live Website Link
-[https://gadget-heaven-e-commerce-platform.netlify.app/](#) 
+[Gadget Heaven](https://gadget-heaven-e-commerce-platform.netlify.app/) 
 
 ## Requirement Document Link
-[https://drive.google.com/file/d/15pFZ2SEV7b5CSM-SnDTL4TmNNaz7XYun/view?usp=sharing](#) 
+[Requirement Document](https://drive.google.com/file/d/15pFZ2SEV7b5CSM-SnDTL4TmNNaz7XYun/view?usp=sharing)
 
 ---
 
